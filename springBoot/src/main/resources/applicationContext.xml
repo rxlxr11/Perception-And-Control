@@ -1,0 +1,22 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/task
+                           http://www.springframework.org/schema/task/spring-task.xsd">
+
+    <!-- 开启定时任务注解 -->
+    <task:annotation-driven/>
+
+    <!-- 配置定时任务 -->
+    <task:scheduled-tasks>
+        <task:scheduled ref="serialReader" method="run" fixed-rate="5000"/> <!-- 5000毫秒，即每隔5秒执行一次 -->
+    </task:scheduled-tasks>
+
+    <!-- 注册定时任务类 -->
+    <bean id="serialReader" class="com.pac.springboot.serial.SerialReader">
+        <constructor-arg value="applicationContext.xml"/>
+    </bean>
+
+</beans>

@@ -1,0 +1,261 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x0000000180005b00, pid=6560, tid=0x0000000000008490
+#
+# JRE version: OpenJDK Runtime Environment (8.0_372-b07) (build 1.8.0_372-b07)
+# Java VM: OpenJDK 64-Bit Server VM (25.372-b07 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# C  [rxtxSerial.dll+0x5b00]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   https://github.com/corretto/corretto-8/issues/
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000019fbe17f800):  JavaThread "Thread-1" [_thread_in_native, id=33936, stack(0x000000701d100000,0x000000701d200000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x000000001d0ff068
+
+Registers:
+RAX=0x0000000000000001, RBX=0x0000000000000000, RCX=0x000000018001d4d5, RDX=0xfffffffffffff665
+RSP=0x000000701d1fee10, RBP=0x00000000ffffffff, RSI=0x0000000000000000, RDI=0x0000019fbe17fa60
+R8 =0x0000000000000002, R9 =0xfffffffffffff63c, R10=0x0000000000000006, R11=0x8101010101010100
+R12=0x000000001d0ff060, R13=0x0000000000000001, R14=0x000000701d1feff8, R15=0x0000000000000000
+RIP=0x0000000180005b00, EFLAGS=0x0000000000010202
+
+Top of Stack: (sp=0x000000701d1fee10)
+0x000000701d1fee10:   0000000000000000 0000000000000000
+0x000000701d1fee20:   000000701d1ff000 0000000000000000
+0x000000701d1fee30:   0000000000000000 000000701d1feff8
+0x000000701d1fee40:   0000019fbb49df18 0000000000000001
+0x000000701d1fee50:   0000019fbe17fa60 0000000000000001
+0x000000701d1fee60:   ffffffffffffffff 0000000180006211
+0x000000701d1fee70:   0000019fbe109ef0 0000000000000001
+0x000000701d1fee80:   0000000000000001 0000019fbe109ef0
+0x000000701d1fee90:   0000019f00000001 0000019fffffffff
+0x000000701d1feea0:   000000701d1ff000 0000019fbb49df18
+0x000000701d1feeb0:   0000019fbe14b070 000000005b81c0a5
+0x000000701d1feec0:   000000701d1ff460 0000019fbe17f800
+0x000000701d1feed0:   0000019fbe17f800 0000019fbe17f800
+0x000000701d1feee0:   0000019fbb49df20 0000a0a8004d1561
+0x000000701d1feef0:   0000019fbb49df20 0000019fbb49df18
+0x000000701d1fef00:   0000019fbe17f800 000000701d1ff000 
+
+Instructions: (pc=0x0000000180005b00)
+0x0000000180005ae0:   15 23 7a 01 00 48 8d 48 60 e8 3a 5d 00 00 4c 8b
+0x0000000180005af0:   e5 8b ac 24 88 00 00 00 44 8b ac 24 80 00 00 00
+0x0000000180005b00:   45 8b 74 24 08 41 89 5c 24 08 41 8b fd 85 ed 78
+0x0000000180005b10:   09 ff 15 e9 14 01 00 44 8b f8 45 85 ed 7e 4a 90 
+
+
+Register to memory mapping:
+
+RAX=0x0000000000000001 is an unknown value
+RBX=0x0000000000000000 is an unknown value
+RCX=0x000000018001d4d5 is an unknown value
+RDX=0xfffffffffffff665 is an unknown value
+RSP=0x000000701d1fee10 is pointing into the stack for thread: 0x0000019fbe17f800
+RBP=0x00000000ffffffff is an unknown value
+RSI=0x0000000000000000 is an unknown value
+RDI=0x0000019fbe17fa60 is an unknown value
+R8 =0x0000000000000002 is an unknown value
+R9 =0xfffffffffffff63c is an unknown value
+R10=0x0000000000000006 is an unknown value
+R11=0x8101010101010100 is an unknown value
+R12=0x000000001d0ff060 is an unknown value
+R13=0x0000000000000001 is an unknown value
+R14=0x000000701d1feff8 is pointing into the stack for thread: 0x0000019fbe17f800
+R15=0x0000000000000000 is an unknown value
+
+
+Stack: [0x000000701d100000,0x000000701d200000],  sp=0x000000701d1fee10,  free space=1019k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [rxtxSerial.dll+0x5b00]
+C  [rxtxSerial.dll+0x6211]
+C  0x0000019fa2939c8e
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  gnu.io.RXTXPort.readArray([BII)I+0
+j  gnu.io.RXTXPort$SerialInputStream.read([BII)I+212
+j  gnu.io.RXTXPort$SerialInputStream.read([B)I+60
+j  org.example.TwoWaySerialComm$SerialReader.run()V+13
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000019fa0b74000 JavaThread "DestroyJavaVM" [_thread_blocked, id=6028, stack(0x000000701b900000,0x000000701ba00000)]
+  0x0000019fbe10a800 JavaThread "Thread-2" [_thread_in_native, id=12300, stack(0x000000701d200000,0x000000701d300000)]
+=>0x0000019fbe17f800 JavaThread "Thread-1" [_thread_in_native, id=33936, stack(0x000000701d100000,0x000000701d200000)]
+  0x0000019fbe17d800 JavaThread "Thread-0" [_thread_in_native, id=14980, stack(0x000000701d000000,0x000000701d100000)]
+  0x0000019fbe0a2800 JavaThread "Service Thread" daemon [_thread_blocked, id=18240, stack(0x000000701ce00000,0x000000701cf00000)]
+  0x0000019fbdfd9800 JavaThread "C1 CompilerThread3" daemon [_thread_blocked, id=27104, stack(0x000000701cd00000,0x000000701ce00000)]
+  0x0000019fbdfd3800 JavaThread "C2 CompilerThread2" daemon [_thread_blocked, id=13600, stack(0x000000701cc00000,0x000000701cd00000)]
+  0x0000019fbdfd2800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=2848, stack(0x000000701cb00000,0x000000701cc00000)]
+  0x0000019fbdfd1000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=940, stack(0x000000701ca00000,0x000000701cb00000)]
+  0x0000019fbdfc8000 JavaThread "Monitor Ctrl-Break" daemon [_thread_in_native, id=15112, stack(0x000000701c900000,0x000000701ca00000)]
+  0x0000019fbbb7c000 JavaThread "Attach Listener" daemon [_thread_blocked, id=14452, stack(0x000000701c800000,0x000000701c900000)]
+  0x0000019fbdf5b000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=6456, stack(0x000000701c700000,0x000000701c800000)]
+  0x0000019fbbb41000 JavaThread "Finalizer" daemon [_thread_blocked, id=2416, stack(0x000000701c600000,0x000000701c700000)]
+  0x0000019fbbb38000 JavaThread "Reference Handler" daemon [_thread_blocked, id=4632, stack(0x000000701c500000,0x000000701c600000)]
+
+Other Threads:
+  0x0000019fbbb0e800 VMThread [stack: 0x000000701c400000,0x000000701c500000] [id=8552]
+  0x0000019fbdfff800 WatcherThread [stack: 0x000000701cf00000,0x000000701d000000] [id=2252]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x00000006c3a00000, size: 4038 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x00000007c0000000
+
+Heap:
+ PSYoungGen      total 75776K, used 10418K [0x000000076be00000, 0x0000000771280000, 0x00000007c0000000)
+  eden space 65024K, 16% used [0x000000076be00000,0x000000076c82cbe0,0x000000076fd80000)
+  from space 10752K, 0% used [0x0000000770800000,0x0000000770800000,0x0000000771280000)
+  to   space 10752K, 0% used [0x000000076fd80000,0x000000076fd80000,0x0000000770800000)
+ ParOldGen       total 173568K, used 0K [0x00000006c3a00000, 0x00000006ce380000, 0x000000076be00000)
+  object space 173568K, 0% used [0x00000006c3a00000,0x00000006c3a00000,0x00000006ce380000)
+ Metaspace       used 4119K, capacity 4752K, committed 4864K, reserved 1056768K
+  class space    used 445K, capacity 500K, committed 512K, reserved 1048576K
+
+Card table byte_map: [0x0000019fb1ce0000,0x0000019fb24d0000] byte_map_base: 0x0000019fae6c3000
+
+Marking Bits: (ParMarkBitMap*) 0x000000005bf76850
+ Begin Bits: [0x0000019fb2a20000, 0x0000019fb6938000)
+ End Bits:   [0x0000019fb6938000, 0x0000019fba850000)
+
+Polling page: 0x0000019fa28f0000
+
+CodeCache: size=245760Kb used=1362Kb max_used=1362Kb free=244397Kb
+ bounds [0x0000019fa2920000, 0x0000019fa2b90000, 0x0000019fb1920000]
+ total_blobs=406 nmethods=137 adapters=182
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 5.393 Thread 0x0000019fbdfd9800 nmethod 133 0x0000019fa2a6ffd0 code [0x0000019fa2a702a0, 0x0000019fa2a71790]
+Event: 5.393 Thread 0x0000019fbdfd9800  131       3       sun.nio.fs.WindowsPathParser::nextNonSlash (24 bytes)
+Event: 5.393 Thread 0x0000019fbdfd9800 nmethod 131 0x0000019fa2a721d0 code [0x0000019fa2a72360, 0x0000019fa2a72870]
+Event: 5.393 Thread 0x0000019fbdfd9800  132       3       java.lang.StringBuilder::append (10 bytes)
+Event: 5.393 Thread 0x0000019fbdfd9800 nmethod 132 0x0000019fa2a6d610 code [0x0000019fa2a6d780, 0x0000019fa2a6d910]
+Event: 5.393 Thread 0x0000019fbdfd9800  134       3       java.io.WinNTFileSystem::isLetter (30 bytes)
+Event: 5.393 Thread 0x0000019fbdfd9800 nmethod 134 0x0000019fa2a72a90 code [0x0000019fa2a72c00, 0x0000019fa2a72e58]
+Event: 5.393 Thread 0x0000019fbdfd9800  135       3       java.util.BitSet::get (69 bytes)
+Event: 5.393 Thread 0x0000019fbdfd9800 nmethod 135 0x0000019fa2a72ed0 code [0x0000019fa2a730c0, 0x0000019fa2a73ab0]
+Event: 5.399 Thread 0x0000019fbdfd9800  137       3       sun.misc.MetaIndex::mayContain (51 bytes)
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (1 events):
+Event: 0.089 Thread 0x0000019fa0b74000 Uncommon trap: reason=null_check action=make_not_entrant pc=0x0000019fa2a3480c method=java.lang.String.equals(Ljava/lang/Object;)Z @ 8
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (9 events):
+Event: 0.023 Thread 0x0000019fa0b74000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x000000076be082a0) thrown at [C:\wsjdk\Corretto8Src\installers\windows\zip\corretto-build\buildRoot
+Event: 0.023 Thread 0x0000019fa0b74000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x000000076be08588) thrown at [C:\wsjdk\Corretto8Src\installers\windows\zip\corretto-build\buildRoot\hotspot\src\share
+Event: 0.089 Thread 0x0000019fa0b74000 Implicit null exception at 0x0000019fa2a34615 to 0x0000019fa2a347fd
+Event: 0.093 Thread 0x0000019fa0b74000 Exception <a 'java/io/FileNotFoundException'> (0x000000076bfd43b8) thrown at [C:\wsjdk\Corretto8Src\installers\windows\zip\corretto-build\buildRoot\hotspot\src\share\vm\prims\jni.cpp, line 709]
+Event: 1.006 Thread 0x0000019fbbb7c000 Exception <a 'java/security/PrivilegedActionException'> (0x000000076c391ce0) thrown at [C:\wsjdk\Corretto8Src\installers\windows\zip\corretto-build\buildRoot\hotspot\src\share\vm\prims\jvm.cpp, line 1514]
+Event: 1.006 Thread 0x0000019fbbb7c000 Exception <a 'java/security/PrivilegedActionException'> (0x000000076c3920d8) thrown at [C:\wsjdk\Corretto8Src\installers\windows\zip\corretto-build\buildRoot\hotspot\src\share\vm\prims\jvm.cpp, line 1514]
+Event: 1.006 Thread 0x0000019fbbb7c000 Exception <a 'java/security/PrivilegedActionException'> (0x000000076c3954b8) thrown at [C:\wsjdk\Corretto8Src\installers\windows\zip\corretto-build\buildRoot\hotspot\src\share\vm\prims\jvm.cpp, line 1514]
+Event: 1.006 Thread 0x0000019fbbb7c000 Exception <a 'java/security/PrivilegedActionException'> (0x000000076c3958b0) thrown at [C:\wsjdk\Corretto8Src\installers\windows\zip\corretto-build\buildRoot\hotspot\src\share\vm\prims\jvm.cpp, line 1514]
+Event: 5.389 Thread 0x0000019fa0b74000 Exception <a 'java/io/FileNotFoundException'> (0x000000076bfea9d8) thrown at [C:\wsjdk\Corretto8Src\installers\windows\zip\corretto-build\buildRoot\hotspot\src\share\vm\prims\jni.cpp, line 709]
+
+Events (10 events):
+Event: 5.393 loading class java/lang/IndexOutOfBoundsException
+Event: 5.393 loading class java/lang/IndexOutOfBoundsException done
+Event: 5.393 loading class gnu/io/RXTXPort$MonitorThread
+Event: 5.393 loading class gnu/io/RXTXPort$MonitorThread done
+Event: 5.393 Thread 0x0000019fbe17d800 Thread added: 0x0000019fbe17d800
+Event: 5.399 loading class org/example/TwoWaySerialComm$SerialReader
+Event: 5.399 loading class org/example/TwoWaySerialComm$SerialReader done
+Event: 5.399 Thread 0x0000019fbe17f800 Thread added: 0x0000019fbe17f800
+Event: 5.399 loading class org/example/TwoWaySerialComm$SerialWriter
+Event: 5.399 loading class org/example/TwoWaySerialComm$SerialWriter done
+
+
+Dynamic libraries:
+0x00007ff7230d0000 - 0x00007ff72310a000 	C:\Users\ACER\.jdks\corretto-1.8.0_372-1\bin\java.exe
+0x00007ffc08eb0000 - 0x00007ffc090a8000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffc08790000 - 0x00007ffc0884f000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffc06590000 - 0x00007ffc06886000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffc07690000 - 0x00007ffc0773f000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffc08850000 - 0x00007ffc088ee000 	C:\Windows\System32\msvcrt.dll
+0x00007ffc08b50000 - 0x00007ffc08bec000 	C:\Windows\System32\sechost.dll
+0x00007ffc079a0000 - 0x00007ffc07ac6000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffc08cd0000 - 0x00007ffc08e6d000 	C:\Windows\System32\USER32.dll
+0x00007ffc06ae0000 - 0x00007ffc06b02000 	C:\Windows\System32\win32u.dll
+0x00007ffc06f10000 - 0x00007ffc06f3c000 	C:\Windows\System32\GDI32.dll
+0x00007ffc06b40000 - 0x00007ffc06c55000 	C:\Windows\System32\gdi32full.dll
+0x00007ffc06a40000 - 0x00007ffc06add000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffc06d80000 - 0x00007ffc06e80000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffbedfb0000 - 0x00007ffbee24a000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007ffc07740000 - 0x00007ffc07770000 	C:\Windows\System32\IMM32.DLL
+0x00007ffbdd520000 - 0x00007ffbdd60f000 	C:\Users\ACER\.jdks\corretto-1.8.0_372-1\jre\bin\msvcr120.dll
+0x00007ffbdd470000 - 0x00007ffbdd516000 	C:\Users\ACER\.jdks\corretto-1.8.0_372-1\jre\bin\msvcp120.dll
+0x000000005b780000 - 0x000000005bff5000 	C:\Users\ACER\.jdks\corretto-1.8.0_372-1\jre\bin\server\jvm.dll
+0x00007ffc07ad0000 - 0x00007ffc07ad8000 	C:\Windows\System32\PSAPI.DLL
+0x00007ffbedc20000 - 0x00007ffbedc47000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffbecd20000 - 0x00007ffbecd29000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffbfd030000 - 0x00007ffbfd03a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffc08a00000 - 0x00007ffc08a6b000 	C:\Windows\System32\WS2_32.dll
+0x00007ffc00220000 - 0x00007ffc0022f000 	C:\Users\ACER\.jdks\corretto-1.8.0_372-1\jre\bin\verify.dll
+0x00007ffbdd440000 - 0x00007ffbdd469000 	C:\Users\ACER\.jdks\corretto-1.8.0_372-1\jre\bin\java.dll
+0x00007ffbd3800000 - 0x00007ffbd382a000 	C:\Users\ACER\.jdks\corretto-1.8.0_372-1\jre\bin\instrument.dll
+0x00007ffc00200000 - 0x00007ffc00216000 	C:\Users\ACER\.jdks\corretto-1.8.0_372-1\jre\bin\zip.dll
+0x00007ffc06f40000 - 0x00007ffc07684000 	C:\Windows\System32\SHELL32.dll
+0x00007ffc04620000 - 0x00007ffc04db3000 	C:\Windows\SYSTEM32\windows.storage.dll
+0x00007ffc07c20000 - 0x00007ffc07f74000 	C:\Windows\System32\combase.dll
+0x00007ffc05fe0000 - 0x00007ffc0600e000 	C:\Windows\SYSTEM32\Wldp.dll
+0x00007ffc088f0000 - 0x00007ffc0899d000 	C:\Windows\System32\SHCORE.dll
+0x00007ffc080a0000 - 0x00007ffc080f5000 	C:\Windows\System32\shlwapi.dll
+0x00007ffc064d0000 - 0x00007ffc064ef000 	C:\Windows\SYSTEM32\profapi.dll
+0x00007ffbd0ae0000 - 0x00007ffbd0afa000 	D:\install\IntelliJ IDEA 2022.3.1\bin\breakgen64.dll
+0x00007ffbd4b10000 - 0x00007ffbd4b2a000 	C:\Users\ACER\.jdks\corretto-1.8.0_372-1\jre\bin\net.dll
+0x00007ffc05d40000 - 0x00007ffc05daa000 	C:\Windows\system32\mswsock.dll
+0x0000000180000000 - 0x0000000180025000 	C:\Users\ACER\.jdks\corretto-1.8.0_372-1\jre\bin\rxtxSerial.dll
+0x00007ffc04200000 - 0x00007ffc043e4000 	C:\Windows\SYSTEM32\dbghelp.dll
+0x00007ffc06e80000 - 0x00007ffc06f02000 	C:\Windows\System32\bcryptPrimitives.dll
+
+VM Arguments:
+jvm_args: -javaagent:D:\install\IntelliJ IDEA 2022.3.1\lib\idea_rt.jar=13280:D:\install\IntelliJ IDEA 2022.3.1\bin -Dfile.encoding=UTF-8 
+java_command: org.example.TwoWaySerialComm
+java_class_path (initial): C:\Users\ACER\.jdks\corretto-1.8.0_372-1\jre\lib\charsets.jar;C:\Users\ACER\.jdks\corretto-1.8.0_372-1\jre\lib\ext\RXTXcomm.jar;C:\Users\ACER\.jdks\corretto-1.8.0_372-1\jre\lib\ext\access-bridge-64.jar;C:\Users\ACER\.jdks\corretto-1.8.0_372-1\jre\lib\ext\cldrdata.jar;C:\Users\ACER\.jdks\corretto-1.8.0_372-1\jre\lib\ext\dnsns.jar;C:\Users\ACER\.jdks\corretto-1.8.0_372-1\jre\lib\ext\jaccess.jar;C:\Users\ACER\.jdks\corretto-1.8.0_372-1\jre\lib\ext\jfxrt.jar;C:\Users\ACER\.jdks\corretto-1.8.0_372-1\jre\lib\ext\localedata.jar;C:\Users\ACER\.jdks\corretto-1.8.0_372-1\jre\lib\ext\nashorn.jar;C:\Users\ACER\.jdks\corretto-1.8.0_372-1\jre\lib\ext\sunec.jar;C:\Users\ACER\.jdks\corretto-1.8.0_372-1\jre\lib\ext\sunjce_provider.jar;C:\Users\ACER\.jdks\corretto-1.8.0_372-1\jre\lib\ext\sunmscapi.jar;C:\Users\ACER\.jdks\corretto-1.8.0_372-1\jre\lib\ext\sunpkcs11.jar;C:\Users\ACER\.jdks\corretto-1.8.0_372-1\jre\lib\ext\zipfs.jar;C:\Users\ACER\.jdks\corretto-1.8.0_372-1\jre\lib\jce.jar;C:\Users\ACER\.jdks\corretto-1.8.0_372-1\jre\lib\jfr.jar;C:\Users\ACER\.jdks\corretto-1.8.0_372-1\jre\lib\jfxswt.jar;C:\Users\ACER\.jdks\corretto-1.8.0_372-1\jre\lib\jsse.jar;C:\Users\ACER\.jdks\corretto-1.8.0_372-1\jre\lib\management-agent.jar;C:\Users\ACER\.jdks\corretto-1.8.0_372-1\jre\lib\resources.jar;C:\Users\ACER\.jdks\corretto-1.8.0_372-1\jre\lib\rt.jar;D:\java\IDEA\PAC_Project\target\classes;D:\install\IntelliJ IDEA 2022.3.1\lib\idea_rt.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=D:\java\Java\jdk1.8.0_251_x64\st180251\tools
+JRE_HOME=D:\java\Java\jre
+PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\Bandizip\;D:\matlab\runtime\win64;D:\matlab\bin;D:\matlab\polyspace\bin;D:\kw\runtime\win64;D:\kw\bin;D:\kw\polyspace\bin;C:\Users\ACER\Downloads\mysql-5.7.24-winx64\bin;D:\study\java\apache-maven-3.8.7-bin\apache-maven-3.8.7\bin;D:\java\Java\jre\bin;D:\java\Java\jdk1.8.0_251_x64\st180251\tools\bin;C:\Program Files (x86)\Tencent\微信web开发者工具\dll;D:\;D:;install\Git\cmd;D:\node.js;C:\Users\ACER\AppData\Roaming\npm\cnpm;D:\install\mingw\bin;D:\Git\cmd;C:\Users\ACER\AppData\Local\Programs\Python\Python38\Scripts\;C:\Users\ACER\AppData\Local\Programs\Python\Python38\;C:\Users\ACER\AppData\Local\Microsoft\WindowsApps;C:\Users\ACER\AppData\Roaming\npm;C:\ProgramData\ACER\GitHubDesktop\bin;C:\Users\ACER\AppData\Local\GitHubDesktop\bin;C:\Users\ACER\AppData\Local\Pandoc\
+USERNAME=ACER
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 141 Stepping 1, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10 , 64 bit Build 19041 (10.0.19041.3031)
+
+CPU:total 12 (initial active 12) (6 cores per cpu, 2 threads per core) family 6 model 141 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 16534840k(7107432k free), swap 17714488k(3531088k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.372-b07) for windows-amd64 JRE (1.8.0_372-b07), built on Apr 17 2023 22:43:30 by "Administrator" with MS VC++ 12.0 (VS2013)
+
+time: Sat Jun 17 11:08:00 2023
+timezone: 中国标准时间
+elapsed time: 5.418772 seconds (0d 0h 0m 5s)
+
