@@ -7,7 +7,7 @@
 
 设计实现一个对现场快递柜状态数据采集、显示、参数设置、抽屉打开、保鲜控制等功能软件系统。  
 
-![](https://github.com/rxlxr11/Perception-And-Control/master/picture/test.PNG)
+![](https://github.com/rxlxr11/Perception-And-Control/raw/master/picture/test.PNG)
 
 ## 主要内容
 
