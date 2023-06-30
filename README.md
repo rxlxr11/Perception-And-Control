@@ -23,17 +23,14 @@
 
 # 结果
 
-![](F:\help\PAC\PAC_Project\picture\result\1.PNG)
+![](https://github.com/rxlxr11/Perception-And-Control/raw/master/picture/result/1.PNG)
+![](https://github.com/rxlxr11/Perception-And-Control/raw/master/picture/result/6.PNG)
+![](https://github.com/rxlxr11/Perception-And-Control/raw/master/picture/result/2.PNG)
+![](https://github.com/rxlxr11/Perception-And-Control/raw/master/picture/result/3.PNG)
+![](https://github.com/rxlxr11/Perception-And-Control/raw/master/picture/result/4.PNG)
+![](https://github.com/rxlxr11/Perception-And-Control/raw/master/picture/result/5.PNG)
 
-![](F:\help\PAC\PAC_Project\picture\result\6.PNG)
 
-![](F:\help\PAC\PAC_Project\picture\result\2.PNG)
-
-![](F:\help\PAC\PAC_Project\picture\result\3.PNG)
-
-![](F:\help\PAC\PAC_Project\picture\result\4.PNG)
-
-![](F:\help\PAC\PAC_Project\picture\result\5.PNG)
 
 # 前端Vue
 
